@@ -14,6 +14,7 @@ const movie1 = {
 
 const App = () => {
   const [movies, setMovies] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const searchMovies = async (title) => {
     const response = await fetch(`https://${API_KEY}&s=${title}`);
@@ -35,15 +36,16 @@ const App = () => {
         <div className="mt-6 py-2  w-[300px] flex justify-center items-center gap-4 border border-white rounded-full">
           <input
             type="text"
+            value={searchTerm}
             className="text-white border-none outline-none"
             placeholder="search by name"
-            onChange={() => {}}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
           <img
             className="w-[20px]"
             src="./search.svg"
             alt="search-logo"
-            onClick={() => {}}
+            onClick={() => searchMovies(searchTerm)}
           />
         </div>
         {movies?.length > 0 ? (

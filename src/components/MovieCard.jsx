@@ -17,7 +17,7 @@ const MovieCard = ({ movie: { Year, Title, Poster, Type, imdbID } }) => {
         <span className="absolute bottom-14 bg-transparent text-gray-700">
           {Type}
         </span>
-        <h3 className="absolute bottom-0 bg-gray-700 font-bold text-white">
+        <h3 className="absolute bottom-0 bg-gray-700 font-bold text-[#b2ff33]">
           {Title}
         </h3>
       </div>
